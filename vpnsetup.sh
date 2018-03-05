@@ -281,6 +281,11 @@ if [ "$(uname -m | cut -c1-3)" = "arm" ]; then
   sed -i '/phase2alg/s/,aes256-sha2_512//' /etc/ipsec.conf
 fi
 
+# Remove unsupported ESP algorithm on Raspbian
+if grep -qs raspbian /etc/os-release; then
+  sed -i '/phase2alg/s/,aes256-sha2_512//' /etc/ipsec.conf
+fi
+
 # Specify IPsec PSK
 conf_bk "/etc/ipsec.secrets"
 cat > /etc/ipsec.secrets <<EOF
