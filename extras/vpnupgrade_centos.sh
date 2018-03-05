@@ -22,6 +22,8 @@ exiterr2() { exiterr "'yum install' failed."; }
 
 vpnupgrade() {
 
+vpnupgrade() {
+
 if ! grep -qs -e "release 6" -e "release 7" /etc/redhat-release; then
   exiterr "This script only supports CentOS/RHEL 6 and 7."
 fi

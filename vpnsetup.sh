@@ -391,7 +391,7 @@ fi
 # Add IPTables rules for VPN
 if [ "$ipt_flag" = "1" ]; then
   service fail2ban stop >/dev/null 2>&1
-  iptables-save > "$IPT_FILE.old-$SYS_DT"
+  iptables-save > "$IPT_FILE.old-$(date +%Y-%m-%d-%H:%M:%S)"
   iptables -I INPUT 1 -p udp --dport 1701 -m policy --dir in --pol none -j DROP
   iptables -I INPUT 2 -m conntrack --ctstate INVALID -j DROP
   iptables -I INPUT 3 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT

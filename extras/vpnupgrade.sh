@@ -22,6 +22,8 @@ exiterr2() { exiterr "'apt-get install' failed."; }
 
 vpnupgrade() {
 
+vpnupgrade() {
+
 os_type="$(lsb_release -si 2>/dev/null)"
 if [ -z "$os_type" ]; then
   [ -f /etc/os-release  ] && os_type="$(. /etc/os-release  && echo "$ID")"
