@@ -35,6 +35,10 @@ if [ "$(sed 's/\..*//' /etc/debian_version)" = "7" ]; then
   exiterr "Debian 7 is not supported."
 fi
 
+if [ "$(sed 's/\..*//' /etc/debian_version)" = "7" ]; then
+  exiterr "This script does not support Debian 7 (Wheezy)."
+fi
+
 if [ -f /proc/user_beancounters ]; then
   exiterr "OpenVZ VPS is not supported."
 fi
