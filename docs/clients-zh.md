@@ -125,38 +125,24 @@ VPN 连接成功后，会在通知栏显示图标。最后你可以到 <a href="
 
 1. 进入设置 -> 通用 -> VPN。
 1. 单击 **添加VPN配置...**。
-1. 单击 **类型** 。选择 **L2TP** 并返回。
-1. 在 **描述** 字段中输入任意内容。
-1. 在 **服务器** 字段中输入`你的 VPN 服务器 IP`。
-1. 在 **帐户** 字段中输入`你的 VPN 用户名`。
-1. 在 **密码** 字段中输入`你的 VPN 密码`。
-1. 在 **密钥** 字段中输入`你的 VPN IPsec PSK`。
-1. 启用 **发送所有流量** 选项。
-1. 单击右上角的 **存储**。
-1. 启用 **VPN** 连接。
+1## OS X
 
-VPN 连接成功后，会在通知栏显示图标。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为`你的 VPN 服务器 IP`。
+>>>>>>>+master
+ 并返回。
+1.**注：** 在首次连接之前需要<a href="https://documentation.meraki.com/MX-Z/Client_VPN/Troubleshooting_Client_VPN#Windows_Error_809" target="_blank">修改一次注册表</a>，以解决 VPN 服务器 和/或 客户端与 NAT （比如家用路由器）的兼容问题。请参照链接网页中的说明，或者打开<a href="http://www.cnblogs.com/xxcanghai/p/4610054.html" target="_blank">提升权限命令提示符</a>并运行以下命令。完成后必须重启计算机。
+- 适用于 Windows Vista, 7, 8 和 10
+  ```console
+  REG ADD HKLM\SYSTEM\CurrentControlSet\Services\PolicyAgent /v AssumeUDPEncapsulationContextOnSendRule /t REG_DWORD /d 0x2 /f
+  ```
 
-## Chromebook
+- 仅适用于 Windows XP
+  ```console
+  REG ADD HKLM\SYSTEM\CurrentControlSet\Services\IPSec /v AssumeUDPEncapsulationContextOnSendRule /t REG_DWORD /d 0x2 /f
+  ```
 
-1. 如果你尚未登录 Chromebook，请先登录。
-1. 单击状态区（其中显示你的帐户头像）。
-1. 单击 **设置**。
-1. 在 **互联网连接** 部分，单击 **添加连接**。
-1. 单击 **添加 OpenVPN / L2TP**。
-1. 在 **服务器主机名** 字段中输入`你的 VPN 服务器 IP`。
-1. 在 **服务名称** 字段中输入任意内容。
-1. 在 **供应商类型** 下拉菜单选择 **L2TP/IPsec + 预共享密钥**。
-1. 在 **预共享密钥** 字段中输入`你的 VPN IPsec PSK`。
-1. 在 **用户名** 字段中输入`你的 VPN 用户名`。
-1. 在 **密码** 字段中输入`你的 VPN 密码`。
-1. 单击 **连接**。
-
-VPN 连接成功后，网络状态图标上会出现 VPN 指示。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为`你的 VPN 服务器 IP`。
-
-如果在连接过程中遇到错误，请参见 <a href="#故障排除">故障排除</a>。
-
-## Windows Phone
+### OS X ###
+>>>>>>>-bb61197
+indows Phone
 
 Windows Phone 8.1 及以上版本用户可以尝试按照 <a href="http://forums.windowscentral.com/windows-phone-8-1-preview-developers/301521-tutorials-windows-phone-8-1-support-l2tp-ipsec-vpn-now.html" target="_blank">这个教程</a> 的步骤操作。最后你可以到 <a href="https://www.ipchicken.com" target="_blank">这里</a> 检测你的 IP 地址，应该显示为`你的 VPN 服务器 IP`。
 

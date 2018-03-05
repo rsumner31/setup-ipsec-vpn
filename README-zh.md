@@ -71,55 +71,15 @@ wget https://git.io/vpnsetup -O vpnsetup.sh && sudo sh vpnsetup.sh
 
 这也包括各种公共云服务中的 Linux 虚拟机，比如 <a href="https://blog.ls20.com/digitalocean" target="_blank">DigitalOcean</a>, <a href="https://blog.ls20.com/vultr" target="_blank">Vultr</a>, <a href="https://blog.ls20.com/linode" target="_blank">Linode</a>, <a href="https://cloud.google.com/compute/" target="_blank">Google Compute Engine</a>, <a href="https://amazonlightsail.com" target="_blank">Amazon Lightsail</a>, <a href="https://azure.microsoft.com" target="_blank">Microsoft Azure</a>, <a href="https://www.ibm.com/cloud-computing/bluemix/virtual-servers" target="_blank">IBM Bluemix</a>, <a href="https://www.ovh.com/us/vps/" target="_blank">OVH</a> 和 <a href="https://www.rackspace.com" target="_blank">Rackspace</a>。
 
+<a href="azure/README-zh.md" target="_blank"><img src="docs/images/azure-deploy-button.png" alt="Deploy to Azure" /></a> <a href="一个专用服务器，或者基于 KVM/Xen 的虚拟专用服务器 (VPS)，全新安装以上操作系统之一。OpenVZ VPS 不受支持，用户可以另外尝试比如 <a href="https://shadowsocks.org" target="_blank">Shadowsocks</a> 或者 <a href="https://github.com/Nyr/openvpn-install" target="_blank">OpenVPN</a>。
+
+这也包括各种公共云服务中的 Linux 虚拟机，比如 <a href="https://blog.ls20.com/digitalocean" target="_blank">DigitalOcean</a>, <a href="https://blog.ls20.com/vultr" target="_blank">Vultr</a>, <a href="https://blog.ls20.com/linode" target="_blank">Linode</a>, <a href="https://cloud.google.com/compute/" target="_blank">Google Compute Engine</a>, <a href="https://amazonlightsail.com" target="_blank">Amazon Lightsail</a>, <a href="https://azure.microsoft.com" target="_blank">Microsoft Azure</a>, <a href="https://www.ibm.com/cloud-computing/bluemix/virtual-servers" target="_blank">IBM Bluemix</a>, <a href="https://www.ovh.com/us/vps/" target="_blank">OVH</a> 和 <a href="https://www.rackspace.com" target="_blank">Rackspace</a>。
+
 <a href="azure/README-zh.md" target="_blank"><img src="docs/images/azure-deploy-button.png" alt="Deploy to Azure" /></a> <a href="http://dovpn.carlfriess.com/" target="_blank"><img src="docs/images/do-install-button.png" alt="Install on DigitalOcean" /></a> <a href="https://www.linode.com/stackscripts/view/37239" target="_blank"><img src="docs/images/linode-deploy-button.png" alt="Deploy to Linode" /></a>
-
-<a href="https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps" target="_blank">**&raquo; 我想建立并使用自己的 VPN ，但是没有可用的服务器**</a>
-
-高级用户可以在 $35 <a href="https://blog.elasticbyte.net/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/" target="_blank">Raspberry Pi 3</a> 上搭建 VPN 服务器。
-
-:warning: **不要** 在你的 PC 或者 Mac 上运行这些脚本！它们只能用在服务器上！
-
-## 安装说明
-
-### Ubuntu & Debian
-
-首先，更新你的系统： 运行 `apt-get update && apt-get dist-upgrade` 并重启。这一步是可选的，但推荐。
-
-要安装 VPN，请从以下选项中选择一个：
-
-**选项 1:** 使用脚本随机生成的 VPN 登录凭证 （完成后会在屏幕上显示）：
-
-```bash
-wget https://git.io/vpnsetup -O vpnsetup.sh && sudo sh vpnsetup.sh
-```
-
-**选项 2:** 编辑脚本并提供你自己的 VPN 登录凭证：
-
-```bash
-wget https://git.io/vpnsetup -O vpnsetup.sh
-nano -w vpnsetup.sh
-[替换为你自己的值： YOUR_IPSEC_PSK, YOUR_USERNAME 和 YOUR_PASSWORD]
-sudo sh vpnsetup.sh
-```
-
-**选项 3:** 将你自己的 VPN 登录凭证定义为环境变量：
-
-```bash
-# 所有变量值必须用 '单引号' 括起来
-# *不要* 在值中使用这些字符：  \ " '
-wget https://git.io/vpnsetup -O vpnsetup.sh && sudo \
-VPN_IPSEC_PSK='你的IPsec预共享密钥' \
-VPN_USER='你的VPN用户名' \
-VPN_PASSWORD='你的VPN密码' sh vpnsetup.sh
-```
-
-**注：** 如果无法通过 `wget` 下载，你也可以打开 <a href="vpnsetup.sh" target="_blank">vpnsetup.sh</a> (或者 <a href="vpnsetup_centos.sh" target="_blank">vpnsetup_centos.sh</a>)，然后点击右方的 **`Raw`** 按钮。按快捷键 `Ctrl-A` 全选， `Ctrl-C` 复制，然后粘贴到你喜欢的编辑器。
-
-### CentOS & RHEL
-
-首先，更新你的系统： 运行 `yum update` 并重启。这一步是可选的，但推荐。
-
-按照与上面相同的步骤，但是将 `https://git.io/vpnsetup` 换成 `https://git.io/vpnsetup-centos`。
+>>>>>>>+master
+YOUR_USE一个专用服务器，或者任何基于 KVM/Xen 的虚拟专用服务器 (VPS)，全新安装以上系统之一。另外也可用 Debian 7 (Wheezy)，但是必须首先运行 <a href="extras/vpnsetup-debian-7-workaround.sh" target="_blank">另一个脚本</a>。 OpenVZ VPS 用户可以尝试使用 Shadowsocks ( <a href="https://github.com/shadowsocks/shadowsocks-libev" target="_blank">libev</a> | <a href="https://github.com/breakwa11/shadowsocks-rss" target="_blank">rss</a> ) 或者 <a href="https://github.com/Nyr/openvpn-install" target="_blank">OpenVPN</a>。
+>>>>>>>-bb61197
+将 `https://git.io/vpnsetup` 换成 `https://git.io/vpnsetup-centos`。
 
 ## 下一步
 
@@ -137,6 +97,7 @@ VPN_PASSWORD='你的VPN密码' sh vpnsetup.sh
 
 ## 重要提示
 
+<<<<<<< master
 *其他语言版本: [English](README.md#important-notes), [简体中文](README-zh.md#重要提示).*
 
 **Windows 用户** 在首次连接之前需要<a href="docs/clients-zh.md#windows-错误-809" target="_blank">修改注册表</a>，以解决 VPN 服务器 和/或 客户端与 NAT（比如家用路由器）的兼容问题。
@@ -161,13 +122,11 @@ VPN_PASSWORD='你的VPN密码' sh vpnsetup.sh
 
 ## 升级Libreswan
 
-提供两个额外的脚本 <a href="extras/vpnupgrade.sh" target="_blank">vpnupgrade.sh</a> 和 <a href="extras/vpnupgrade_centos.sh" target="_blank">vpnupgrade_centos.sh</a>，可用于升级 <a href="https://libreswan.org" target="_blank">Libreswan</a> （<a href="https://github.com/libreswan/libreswan/blob/master/CHANGES" target="_blank">更新日志</a> | <a href="https://lists.libreswan.org/mailman/listinfo/swan-announce" target="_blank">通知列表</a>）。请在运行前根据需要修改 `SWAN_VER` 变量。查看已安装版本： `ipsec --version`.
-
-```bash
-# Ubuntu & Debian
-wget https://git.io/vpnupgrade -O vpnupgrade.sh
-# CentOS & RHEL
-wget https://git.io/vpnupgrade-centos -O vpnupgrade.sh
+提供两个额外的脚本 <a href="extras/vpnupgrade.sh" target="_blank">vpnupgrade.sh</a> 和 <a href="extras/vpnupgrade_centos*其他语言版本: [English](README.md#important-notes), [简体中文](README-zh.md#重要提示).*
+>>>>>>>+master
+href="ht**Windows 用户** 在首次连接之前需要<a href="docs/clients-zh.md#regkey" target="_blank">修改一次注册表</a>，以解决 VPN 服务器 和/或 客户端与 NAT （比如家用路由器）的兼容问题。如果在连接过程中遇到错误，请参见 <a href="docs/clients-zh.md#故障排除" target="_blank">故障排除</a>。
+>>>>>>>-bb61197
+-O vpnupgrade.sh
 ```
 
 ## 问题和反馈
@@ -190,8 +149,9 @@ wget https://git.io/vpnupgrade-centos -O vpnupgrade.sh
 
 ## 授权协议
 
-版权所有 (C) 2014-2017 <a href="https://www.linkedin.com/in/linsongui" target="_blank">Lin Song</a> <a href="https://www.linkedin.com/in/linsongui" target="_blank"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png" width="160" height="25" border="0" alt="View my profile on LinkedIn"></a>   
-基于 <a href="https://github.com/sarfata/voodooprivacy" target="_blank">Thomas Sarlandie 的工作</a> (版权所有 2012)
+版权所有 (C) 2014-2017 <a href="https://www.linkedin.com/in/linsongui" target="_blank">Lin Song</a> <a href="https://www.l如果需要在安装后更改 IPTables 规则，请编辑 `/etc/iptables.rules` 和/或 `/etc/iptables/rules.v4` (Ubuntu/Debian)，或者 `/etc/sysconfig/iptables` (CentOS)。然后重启服务器。
 
-这个项目是以 <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">知识共享署名-相同方式共享3.0</a> 许可协议授权。   
+在使用 `IPsec/L2TP` 连接时，VPN 服务器在虚拟网络 `192.168.42.0/24` 内具有 IP `192.168.42.1`。
+>>>>>>>+master
+tp://creativecommons.org/licenses/by-sa/3.0/" target="_blank">知识共享署名-相同方式共享3.0</a> 许可协议授权。   
 必须署名： 请包括我的名字在任何衍生产品，并且让我知道你是如何改善它的！
